@@ -152,6 +152,16 @@ ll_iter_t ll_find(ll_list_t list, void *item) {
     return it;
 }
 
+void ll_copy(ll_list_t src, ll_list_t dst) {
+    void *item;
+    ll_iter_t it = ll_iter(src);
+    ll_clear(dst);
+    while ((item = ll_iter_get(it)) != NULL) {
+        ll_push_back(dst, item);
+        ll_iter_advance(it);
+    }
+    ll_iter_free(it);
+}
 
 void ll_sort(ll_list_t list, int (*cmp)(void *a, void *b)) {
     ll_node_type *n;

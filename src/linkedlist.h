@@ -17,6 +17,7 @@ unsigned long ll_size(ll_list_t list);
 int ll_empty(ll_list_t list);
 void ll_clear(ll_list_t list);
 ll_iter_t ll_find(ll_list_t list, void *item);
+void ll_copy(ll_list_t src, ll_list_t dst);
 /**
  * perform a stable inplace sort of list. smallest items first.
  * 
